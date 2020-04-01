@@ -24,11 +24,21 @@ function displayText(classname, container, text, speed){
 function onKeyPress(pressedKey){
   if(isDisplayingText) return;
   if(pressedKey.key == 'y'){
-    console.log("Display Dog");
+    displayDog();
   }
   else{
-    console.log("WHAT! WHY NOT!");
+    displayText("meh", panel, "nah too bad", 10);
+
+    displayDog();
   }
+}
+
+function displayDog(){
+  var img = document.createElement('img');
+  img.src = './cute_dog.jpg';
+  img.style.width = '500px';
+  img.style.height = '800px';
+  panel.appendChild(img);
 }
 
 var intro_text = "Hi! \n \
@@ -36,5 +46,5 @@ var intro_text = "Hi! \n \
   Would you like to see a dog? \n \
   (y/n)";
 
-displayText("test", panel, intro_text, 50);
+displayText("test", panel, intro_text, 10);
 document.addEventListener("keydown", onKeyPress);
