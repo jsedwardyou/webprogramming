@@ -1,5 +1,6 @@
 var panel = document.getElementById("panel_text");
 var isDisplayingText = false;
+var displayed = false;
 function displayText(classname, container, text, speed){
   isDisplayingText = true;
   var div = document.createElement('div');
@@ -22,14 +23,17 @@ function displayText(classname, container, text, speed){
 }
 
 function onKeyPress(pressedKey){
-  if(isDisplayingText) return;
+  if(isDisplayingText || displayed) return;
   if(pressedKey.key == 'y'){
     displayDog();
   }
-  else{
+  else if (pressedKey.key == 'n'){
     displayText("meh", panel, "nah too bad", 10);
 
     displayDog();
+  }
+  else{
+    alert("WRONG KEY");
   }
 }
 
@@ -39,6 +43,7 @@ function displayDog(){
   img.style.width = '500px';
   img.style.height = '800px';
   panel.appendChild(img);
+  displayed = true;
 }
 
 var intro_text = "Hi! \n \
