@@ -64,12 +64,16 @@ h1{
     display:block;
 }
 #content_page{
-    display:block;
+    display:inline-block;
     text-align: center;
-    width: 100%;
+    width: 200px;
     height: 50px;
 }
 
-p{
-    width: 100%;
+.main_content_lower{
+    display:block;
+    text-align:center;
+}
+.content_page_button{
+    display:inline-block;
 }
